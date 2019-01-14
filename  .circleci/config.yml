@@ -15,20 +15,20 @@ jobs:
          command: sudo chmod +x ./gradlew
       - run:
           name: Download Dependencies
-          command: sudo ./gradlew androidDependencies
+          command: sudo chmod +x  ./gradlew androidDependencies
       - save_cache:
           paths:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
        - run:
           name: Clean Up
-          command: sudo ./gradlew clean
+          command: sudo chmod +x  ./gradlew clean
       - run:
           name: Build
-          command: sudo ./gradlew build
+          command: sudo chmod +x  ./gradlew build
       - run:
           name: Test
-          command: sudo ./gradlew test
+          command: sudo chmod +x  ./gradlew test
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/ 
           path: app/build/reports
           destination: reports
