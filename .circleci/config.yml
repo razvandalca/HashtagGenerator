@@ -40,7 +40,7 @@ jobs:
     - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
 
     # SDK licenses
-    - run: sdkmanager --licenses
+    - run: ./sdkmanager --licenses
     # Dependencies
     #   This would typically go in either a build or a build-and-test job when using workflows
     # Restore the dependency cache
